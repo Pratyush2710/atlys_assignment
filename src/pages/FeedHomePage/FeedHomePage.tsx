@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import css from "./Feed.module.scss";
 import FeedList from "../../components/FeedList/FeedList";
 import PostBox from "../../components/FeedList/PostBox/PostBox";

@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./NotFoundPage.module.scss";
 import { Link } from "react-router-dom";
 
