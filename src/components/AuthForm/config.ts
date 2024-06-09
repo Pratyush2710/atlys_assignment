@@ -9,13 +9,13 @@ export const authConfig = {
     footerCTALabel: "Register →",
     footerCTALink: "/auth/register",
     initialValues: {
-      email: "",
+      username: "",
       password: "",
     },
     validationSchema: LoginSchema,
     fields: [
       {
-        name: "email",
+        name: "username",
         label: "Email or Username",
         placeholder: "Enter your email or username",
         type: "text",

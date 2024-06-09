@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Theresa Webb",
+    "time": "5 mins ago",
+    "content": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+    "comments": 24,
+    "imageUrl": "https://randomuser.me/api/portraits/women/1.jpg",
+    "sentimentIcon": "😊"
+  },
+  {
+    "id": 2,
+    "name": "Marvin McKinney",
+    "time": "8 mins ago",
+    "content": "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "comments": 0,
+    "imageUrl": "https://randomuser.me/api/portraits/men/2.jpg",
+    "sentimentIcon": "😢"
+  },
+  {
+    "id": 3,
+    "name": "Kathryn Murphy",
+    "time": "10 mins ago",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "comments": 5,
+    "imageUrl": "https://randomuser.me/api/portraits/women/3.jpg",
+    "sentimentIcon": "😠"
+  },
+  {
+    "id": 4,
+    "name": "Eleanor Pena",
+    "time": "12 mins ago",
+    "content": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "comments": 10,
+    "imageUrl": "https://randomuser.me/api/portraits/women/4.jpg",
+    "sentimentIcon": "😃"
+  },
+  {
+    "id": 5,
+    "name": "Courtney Henry",
+    "time": "15 mins ago",
+    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    "comments": 8,
+    "imageUrl": "https://randomuser.me/api/portraits/women/5.jpg",
+    "sentimentIcon": "😐"
+  },
+  {
+    "id": 6,
+    "name": "Wade Warren",
+    "time": "20 mins ago",
+    "content": "Nisi ut aliquip ex ea commodo consequat.",
+    "comments": 12,
+    "imageUrl": "https://randomuser.me/api/portraits/men/6.jpg",
+    "sentimentIcon": "😉"
+  },
+  {
+    "id": 7,
+    "name": "Savannah Nguyen",
+    "time": "25 mins ago",
+    "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+    "comments": 3,
+    "imageUrl": "https://randomuser.me/api/portraits/women/7.jpg",
+    "sentimentIcon": "😇"
+  },
+  {
+    "id": 8,
+    "name": "Ralph Edwards",
+    "time": "30 mins ago",
+    "content": "Eu fugiat nulla pariatur.",
+    "comments": 0,
+    "imageUrl": "https://randomuser.me/api/portraits/men/8.jpg",
+    "sentimentIcon": "😔"
+  },
+  {
+    "id": 9,
+    "name": "Jane Cooper",
+    "time": "35 mins ago",
+    "content": "Excepteur sint occaecat cupidatat non proident.",
+    "comments": 6,
+    "imageUrl": "https://randomuser.me/api/portraits/women/9.jpg",
+    "sentimentIcon": "🤔"
+  },
+  {
+    "id": 10,
+    "name": "Cameron Williamson",
+    "time": "40 mins ago",
+    "content": "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "comments": 15,
+    "imageUrl": "https://randomuser.me/api/portraits/men/10.jpg",
+    "sentimentIcon": "😎"
+  }
+]

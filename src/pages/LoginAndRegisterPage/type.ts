@@ -5,5 +5,5 @@ export interface AuthPageProps {
 export interface AuthFormValues {
   username?: string;
   password: string;
-  email: string;
+  email?: string;
 }

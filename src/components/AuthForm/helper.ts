@@ -1,8 +1,8 @@
 import * as Yup from "yup";
 
 export const LoginSchema = Yup.object().shape({
-  email: Yup.string()
-    .test("email", "Invalid email or username format", (value) => {
+  username: Yup.string()
+    .test("username", "Invalid email or username format", (value) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
       if (!value) return;
