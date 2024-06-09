@@ -5,32 +5,27 @@ import PostBox from "../../components/FeedList/PostBox/PostBox";
 import ModalComponent from "../../components/ModalComponent/ModalComponent";
 import { useToggleOpen } from "../../hooks/useToggleOpen";
 import LoginAndRegisterPage from "../LoginAndRegisterPage/LoginAndRegisterPage";
-
-function getUserToken() {
-  return !!(localStorage.getItem("token") || "");
-}
+import { useAuth } from "../../context/AuthContext";
 
 export default function FeedHomePage() {
-  const isLoggedIn = useMemo(
-    () => getUserToken(),
-    [localStorage.getItem("token")]
-  );
+  const { isAuthenticated } = useAuth();
   const { isOpen, open, close } = useToggleOpen();
-  const onSubmitPost = () => {
+  const onSubmitPost = (post?: string) => {
     const token = localStorage.getItem("token");
     if (!token) {
       open();
     } else {
-      window.alert("Saved successfully");
+      post && window.alert(`Saved successfully: ${post}`);
     }
   };
-  console.log(isLoggedIn);
+  console.log(isAuthenticated);
   return (
     <>
       <div className={css.container}>
         <header className={css.header}>
           <h1>
-            Hello {`${isLoggedIn ? localStorage.getItem("username") : "User"}`}
+            Hello{" "}
+            {`${isAuthenticated ? localStorage.getItem("username") : "User"}`}
           </h1>
           <p>
             How are you doing today? Would you like to share something with the

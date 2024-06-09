@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { MdOutlineModeComment } from "react-icons/md";
 import { FaCommentDots } from "react-icons/fa";
 import css from "../FeedList.module.scss";
@@ -7,12 +7,15 @@ import CommentSection from "../CommentSection/CommentSection";
 
 interface FeedItemProps {
   feed?: Feed;
-  onSubmitPost?: () => void;
+  onSubmitPost?: (post?: string) => void;
 }
 
 const FeedItem: React.FC<FeedItemProps> = ({ feed, onSubmitPost }) => {
   const [showComments, setShowComments] = useState(false);
-
+  const ref = useRef<HTMLTextAreaElement>(null);
+  const onPostSubmit = () => {
+    onSubmitPost?.(ref?.current?.value);
+  };
   return (
     <div className={css.feedItem}>
       <div className={css.feedHeader}>
@@ -50,6 +53,7 @@ const FeedItem: React.FC<FeedItemProps> = ({ feed, onSubmitPost }) => {
           feed.content
         ) : (
           <textarea
+            ref={ref}
             placeholder="How are you feeling today?"
             className={css.postInput}
           />
@@ -65,7 +69,7 @@ const FeedItem: React.FC<FeedItemProps> = ({ feed, onSubmitPost }) => {
             {feed.comments} comments
           </button>
         ) : (
-          <button className={css.postButton} onClick={onSubmitPost}>
+          <button className={css.postButton} onClick={onPostSubmit}>
             Post
           </button>
         )}

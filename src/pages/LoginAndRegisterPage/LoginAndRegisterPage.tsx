@@ -3,6 +3,7 @@ import css from "./login.module.scss";
 import { AuthFormValues } from "./type";
 import { useNavigate } from "react-router-dom";
 import AuthForm from "../../components/AuthForm/AuthForm";
+import { useAuth } from "../../context/AuthContext";
 
 interface LoginAndRegisterPageProps {
   showLoginPage?: boolean;
@@ -14,6 +15,7 @@ export default function LoginAndRegisterPage({
   onAuthentication,
 }: LoginAndRegisterPageProps): React.ReactElement {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [isLoginPageVisible, setIsLoginPageVisible] = useState(showLoginPage);
 
   const onContextChange = () => {
@@ -21,11 +23,7 @@ export default function LoginAndRegisterPage({
   };
 
   const onLogin = (data: AuthFormValues) => {
-    const token = Math.random().toString(36).substring(2, 15); // Generate random token
-    localStorage.setItem("token", token);
-    localStorage.setItem("username", data.username || "");
-    localStorage.setItem("email", data.email || "");
-    console.log("Authentication successful", data);
+    login(data);
     onAuthentication ? onAuthentication() : navigate("/posts");
   };
 
