@@ -4,6 +4,9 @@
 
 This is a social feed application where users can share their thoughts, view posts from others, and interact with a community. The application is built with React and TypeScript and features a modular design using reusable atomic components. The UI is styled using SCSS modules for better maintainability and scalability.
 
+
+Link: [https://social-feed-assignment.netlify.app/](https://social-feed-assignment.netlify.app/)
+
 Demo : [https://drive.google.com/file/d/1HYk0GbJxuXRZAkgyPvyLIjTHsm0GRqjC/view?usp=sharing](https://drive.google.com/file/d/1HYk0GbJxuXRZAkgyPvyLIjTHsm0GRqjC/view?usp=sharing)
 
 ## Features
