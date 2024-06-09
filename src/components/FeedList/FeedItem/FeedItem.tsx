@@ -7,9 +7,10 @@ import CommentSection from "../CommentSection/CommentSection";
 
 interface FeedItemProps {
   feed?: Feed;
+  onSubmitPost?: () => void;
 }
 
-const FeedItem: React.FC<FeedItemProps> = ({ feed }) => {
+const FeedItem: React.FC<FeedItemProps> = ({ feed, onSubmitPost }) => {
   const [showComments, setShowComments] = useState(false);
 
   return (
@@ -64,7 +65,9 @@ const FeedItem: React.FC<FeedItemProps> = ({ feed }) => {
             {feed.comments} comments
           </button>
         ) : (
-          <button className={css.postButton}>Post</button>
+          <button className={css.postButton} onClick={onSubmitPost}>
+            Post
+          </button>
         )}
       </div>
       {showComments && <CommentSection />}

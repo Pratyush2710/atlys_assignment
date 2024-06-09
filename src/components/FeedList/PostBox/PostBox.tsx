@@ -2,10 +2,10 @@ import React from "react";
 import css from "../FeedList.module.scss";
 import FeedItem from "../FeedItem/FeedItem";
 
-const PostBox: React.FC = () => {
+const PostBox: React.FC<{ onSubmitPost: () => void }> = ({ onSubmitPost }) => {
   return (
     <div className={css.feedList}>
-      <FeedItem />
+      <FeedItem onSubmitPost={onSubmitPost} />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import cx from "classnames";
 import { Formik } from "formik";
-import { Link } from "react-router-dom";
 import css from "./AuthForm.module.scss";
 import InputComponent from "../InputComponent/InputComponent";
 import { authConfig } from "./config";
@@ -9,11 +8,13 @@ import { AuthFormValues } from "../../pages/LoginAndRegisterPage/type";
 
 interface AuthFormProps {
   onLogin?: (data: AuthFormValues) => void;
+  onContextChange: () => void;
   isLoginPage?: boolean;
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({
   onLogin,
+  onContextChange,
   isLoginPage = false,
 }) => {
   const config = useMemo(
@@ -65,9 +66,9 @@ const AuthForm: React.FC<AuthFormProps> = ({
             </form>
             <div className={css.text}>
               {config.footer}{" "}
-              <Link to={config.footerCTALink} className={css.link}>
+              <span className={css.link} onClick={onContextChange}>
                 {config.footerCTALabel}
-              </Link>
+              </span>
             </div>
           </div>
         );

@@ -1,16 +1,24 @@
-import React, { ReactElement } from "react";
+import React, { useState } from "react";
 import css from "./login.module.scss";
 import { AuthFormValues } from "./type";
 import { useNavigate } from "react-router-dom";
+import AuthForm from "../../components/AuthForm/AuthForm";
 
 interface LoginAndRegisterPageProps {
-  children: ReactElement<{ onLogin: (data: AuthFormValues) => void }>;
+  showLoginPage?: boolean;
+  onAuthentication?: () => void;
 }
 
 export default function LoginAndRegisterPage({
-  children,
+  showLoginPage = false,
+  onAuthentication,
 }: LoginAndRegisterPageProps): React.ReactElement {
   const navigate = useNavigate();
+  const [isLoginPageVisible, setIsLoginPageVisible] = useState(showLoginPage);
+
+  const onContextChange = () => {
+    setIsLoginPageVisible((prevState) => !prevState);
+  };
 
   const onLogin = (data: AuthFormValues) => {
     const token = Math.random().toString(36).substring(2, 15); // Generate random token
@@ -18,10 +26,16 @@ export default function LoginAndRegisterPage({
     localStorage.setItem("username", data.username || "");
     localStorage.setItem("email", data.email || "");
     console.log("Authentication successful", data);
-    navigate("/posts");
+    onAuthentication ? onAuthentication() : navigate("/posts");
   };
 
-  const childrenWithProps = React.cloneElement(children, { onLogin });
-
-  return <div className={css.wrapper}>{childrenWithProps}</div>;
+  return (
+    <div className={css.wrapper}>
+      <AuthForm
+        isLoginPage={isLoginPageVisible}
+        onLogin={onLogin}
+        onContextChange={onContextChange}
+      />
+    </div>
+  );
 }
